@@ -16,3 +16,4 @@ app.listen(PORT, () => {
 // callback: when a function is passed as an argument to another function
 // higher order function: a function that takes another function as an argument
 // first class function: a function can be passed as an argument to another function
+

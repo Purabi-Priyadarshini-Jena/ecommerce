@@ -22,3 +22,9 @@ module.exports = router
 // export {router} :named export
 // import router from './router' :default import
 // import {router} from './router' :named import
+
+
+//falsy values in js
+// null, undefined, "", 0, false, NaN
+//truthy values in js
+// "hello", 1, true, {}, [], function() {}, {}
