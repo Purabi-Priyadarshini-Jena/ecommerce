@@ -3,8 +3,11 @@ const { User } = require('../db/models')
 
 const createUserRepository = async (user) => {
     console.log("Inside createUserRepository")
-    const { name, email, password, role } = user
-    return await User.create({ name, email, password, role, createdAt: new Date(), updatedAt: new Date() })
+    return await User.create(user)
+}
+
+const findUserByEmailRepository = async (email) => {
+    return await User.findOne({ where: { email } })
 }
 
 const getUsersRepository = async () => {
@@ -13,7 +16,8 @@ const getUsersRepository = async () => {
 
 module.exports = {
     createUserRepository,
-    getUsersRepository
+    getUsersRepository,
+    findUserByEmailRepository
 }
 
 

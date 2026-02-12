@@ -3,8 +3,10 @@ const { createUserService } = require("../service/user.service")
 const createUserController = async (req, res) => {
     console.log("Inside createUserController")
     const { name, email, password } = req.body
-    const user = { name, email, password, role: 'user' }
-    const result = await createUserService(user)
+    const result = await createUserService({ name, email, password, role: 'user' })
+    if (result === "User already exists") {
+        return res.status(400).json({ "message": "User already exists with this email" })
+    }
     res.status(201).json({ "message": "User created successfully", result })
 }
 
