@@ -1,12 +1,13 @@
 const { createUserRepository, getUsersRepository } = require('../repository/user.repository')
 
-const createUserService = (user) => {
+const createUserService = async (user) => {
     console.log("Inside createUserService")
-    return createUserRepository(user)
+    return await createUserRepository(user)
 }
 
-const getUsersService = () => {
-    return getUsersRepository()
+const getUsersService = async () => {
+    console.log("Inside getUsersService")
+    return await getUsersRepository()
 }
 
 module.exports = {
