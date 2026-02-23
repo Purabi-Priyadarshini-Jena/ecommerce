@@ -1,7 +1,7 @@
-const appErrorHandler = (err, req, res, next) => {
-    res.status(err.statusCode).json({
+const appErrorHandler = (error, req, res, next) => {
+    res.status(error.statusCode).json({
         success: false,
-        message: err.message
+        message: error.message
     })
 }
 
